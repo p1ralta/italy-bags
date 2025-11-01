@@ -1,4 +1,4 @@
 <div>Italy bags</div>
-<div>
-
-</div>
+@for(bag of bags$ | async; track bag.id) {
+    <div>{{bag.title}}</div>
+}
