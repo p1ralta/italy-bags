@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Observable, of } from 'rxjs';
+import { BASE_URL } from './shared/constants/urls';
 
 @Component({
     selector: 'app-root',
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
     private readonly http = inject(HttpClient);
     public bags$: Observable<{ id: number; title: string }[]> = of([]);
     public ngOnInit(): void {
-        console.log('AAAAA');
-        this.bags$ = this.http.get<{ id: number; title: string }[]>('http://localhost:8000/api/bags');
+        console.log(BASE_URL);
+        // this.bags$ = this.http.get<{ id: number; title: string }[]>('http://localhost:8000/api/bags');
     }
 }
