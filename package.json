@@ -1,0 +1,9 @@
+{
+    "name": "italy-bags",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "cd backend/dist && node server.js",
+        "prebuild": "cd backend && npm run build",
+        "build": "cd frontend && npm run build"
+    }
+}

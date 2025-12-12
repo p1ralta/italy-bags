@@ -1,6 +1,6 @@
 import express from 'express';
-import bags from './routes/bags';
 import cors from 'cors';
+import bags from './routes/bags';
 
 const app = express();
 
@@ -17,11 +17,15 @@ app.use(
     }),
 );
 
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
+
 // Routes
 app.use('/api/bags', bags);
 
 // Server start
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`✅ Server running on http://localhost:${PORT}`);
 });
