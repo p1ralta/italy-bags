@@ -1,10 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { Store } from '@ngrx/store';
 
 describe('AppComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [AppComponent],
+            providers: [
+                {
+                    provide: Store,
+                    useValue: {},
+                },
+            ],
         }).compileComponents();
     });
 
@@ -14,5 +21,3 @@ describe('AppComponent', () => {
         expect(app).toBeTruthy();
     });
 });
-
-//test
